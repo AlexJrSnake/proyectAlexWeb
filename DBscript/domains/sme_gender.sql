@@ -1,1 +1,0 @@
-﻿ CREATE DOMAIN sme_gender VARCHAR(30) CHECK (VALUE IN ('Masculino', 'Femenino', 'Mixto'));

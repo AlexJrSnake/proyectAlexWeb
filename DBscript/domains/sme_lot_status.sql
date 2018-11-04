@@ -1,1 +1,0 @@
-﻿ CREATE DOMAIN sme_lot_status VARCHAR(30) CHECK (VALUE IN ('Proyectado', 'Programado', 'Realizado'));

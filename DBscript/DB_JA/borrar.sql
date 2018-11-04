@@ -1,9 +1,0 @@
-delete from txhousingway_detail;
-delete from txhousingway;
-delete from txbroiler;
-delete from txbroiler_detail;
-delete from txprogrammed_eggs;
-delete from txeggs_storage;
-delete from txscenarioposturecurve;
-delete from txbroilereviction;
-delete from txbroilereviction_detail;

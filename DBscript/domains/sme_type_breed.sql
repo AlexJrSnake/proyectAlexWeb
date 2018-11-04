@@ -1,1 +1,0 @@
-﻿ CREATE DOMAIN sme_type_breed VARCHAR(30) CHECK (VALUE IN ('Reproductora Pesada', 'Reproductora Liviana'));
