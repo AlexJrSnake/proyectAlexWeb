@@ -1,0 +1,1 @@
+﻿ CREATE DOMAIN sme_posture_type VARCHAR(30) CHECK (VALUE IN ('Joven', 'Intermedia', 'Vieja'));
