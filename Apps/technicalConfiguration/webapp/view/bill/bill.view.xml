@@ -1,0 +1,160 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" 
+		  xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" 
+		  controllerName="technicalConfiguration.controller.bill">
+	<App>
+		<pages>
+			
+			<sap.m.semantic:DetailPage busy="{util>/busy}" xmlns:sap.m.semantic="sap.m.semantic" 
+			 id="billPage" navButtonPress="onNavMaster">
+				
+				
+				<sap.m.semantic:content>
+					
+					<ObjectHeader 	title="{i18n>bill.entityName}" numberUnit="{i18n>records}" 
+									id="breedHeader" backgroundDesign="Solid" responsive="true"
+									fullScreenOptimized="true">
+						<attributes>
+
+						<ObjectAttribute
+							title="{i18n>clients.name}"
+							text="{mdbill>/infoUser/name}"/>
+
+						<ObjectAttribute
+							title="{i18n>clients.cd}"
+							text="{mdbill>/infoUser/cd}"/>
+
+			
+
+						<ObjectAttribute
+							title="{i18n>clients.phone}"
+							text="{mdbill>/infoUser/phone}"/>
+
+		
+
+						<ObjectAttribute
+							title="{i18n>clients.address}"
+							text="{mdbill>/infoUser/address}"/>	
+
+
+						<ObjectAttribute
+							title="{i18n>clients.email}"
+							text="{mdbill>/infoUser/email}"/>	
+						</attributes>
+
+					</ObjectHeader>	
+					
+					<VBox 	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" 
+							width="100%" direction="Column" id="breedVBox">
+						
+						<items>
+							
+						
+							
+							<Table
+								xmlns:core="sap.ui.core"
+								xmlns:mvc="sap.ui.core.mvc"
+								xmlns:html="http://www.w3.org/1999/xhtml"
+								xmlns:sap.m.semantic="sap.m.semantic"
+								xmlns="sap.m"
+								noDataText="{i18n>noRecords}"
+								id="billTable"
+								items="{mdbill>/records/}"
+								mode="None">
+
+								<headerToolbar>
+									<OverflowToolbar id="otbSubheader">
+										<ToolbarSpacer/>
+									
+
+
+										<Button text="Agregar Producto" type="Accept" press="onDialogLoadProduct"/>
+									
+										<Label text="Codigo de Factura"  align="left"/>		
+										<ObjectNumber
+											number="  {path:'mdbill>/Code'}"  align="left"/>
+
+
+										<Label text="Total Facturado"  align="left"/>
+										<ObjectNumber
+											number="  {path:'mdbill>/Total'}"  align="left"/>
+
+									</OverflowToolbar>
+								</headerToolbar>
+
+								<items>
+									<ColumnListItem counter="0" id="bill_list_item" >
+										<cells>
+											<Text text="{mdbill>code}" maxLines="0" id="bill_code_text"/>
+										</cells>
+										<cells>
+											<Text text="{mdbill>name}" maxLines="0" id="bill_name_text"/>
+										</cells>
+										<cells>
+											<Text text="{mdbill>description}" maxLines="0" id="bill_description_text"/>
+										</cells>
+										<cells>
+											<Text text="{mdbill>unit_price}" maxLines="0" id="bill_unit_price_text"/>
+										</cells>
+										<cells>
+											<Text text="{mdbill>quantity}" maxLines="0" id="bill_quantity_text"/>
+										</cells>
+										<!-- <cells>
+											<Text text="{mdbill>cost}" maxLines="0" id="bill_cost_text"/>
+										</cells> -->
+									</ColumnListItem>
+								</items>
+								<columns>
+									<Column id="bill_code_column" vAlign="Middle" width="30%">
+										<header>
+											<Label text="{i18n>broilerProduct.code}" id="bill_table_code_label"/>
+										</header>
+									</Column>	
+
+									<Column id="bill_name_column" vAlign="Middle" width="30%">
+										<header>
+											<Label text="{i18n>broilerProduct.name}" id="bill_table_name_label"/>
+										</header>
+									</Column>	
+									
+									<Column id="bill_description_column" vAlign="Middle" width="30%">
+										<header>
+											<Label text="{i18n>broilerProduct.description}" id="bill_table_description_label"/>
+										</header>
+									</Column>	
+
+									<Column id="bill_unit_price_column" vAlign="Middle" width="30%">
+										<header>
+											<Label text="{i18n>broilerProduct.unit_price}" id="bill_table_unit_price_label"/>
+										</header>
+									</Column>
+										
+									<Column id="bill_quantity_column" vAlign="Middle" width="30%">			
+										<header>
+											<Label text="{i18n>broilerProduct.quantity}" id="bill_table_quantity_label"/>
+										</header>
+									</Column>
+									
+									<!-- <Column id="bill_cost_column" vAlign="Middle" width="30%">
+										<header>
+											<Label text="{i18n>broilerProduct.cost}" id="bill_table_cost_label"/>
+										</header>
+									</Column> -->
+									
+								</columns>
+						
+							</Table>
+						
+						</items>
+					</VBox>
+					
+				</sap.m.semantic:content>
+
+				<sap.m.semantic:customFooterContent>
+					<Button text="{i18n>User}" width="150px" id="LoadUserBtn" type="Accept" visible="{mdbill>/User}" press="onDialogLoadUser"/>
+					<Button text="{i18n>Load}" width="100px" id="LoadBillBtn" type="Accept" visible="{mdbill>/Load}" press="onDialogCheckInUser"/>
+					<Button text="{i18n>clean}" width="100px" id="CleanBillBtn" type="Reject" visible="{mdbill>/Load}" press="onCleanBill"/>
+				</sap.m.semantic:customFooterContent>
+			</sap.m.semantic:DetailPage>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,44 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Dialog
+		id="passDialog"
+		title="Cambio de contraseña"
+		icon="sap-icon://employee-pane">
+
+	<content>
+
+		<VBox alignItems="Center">
+             <Label text="Contraseña actual:" class="sapUiSmallMarginTop" design="Bold"/>
+          <Input type="Password"
+              placeholder="Ingrese su Contraseña" id="old" submit="onSaveDialog">
+          </Input>
+          <Label text="Nueva Contraseña:" class="sapUiSmallMarginTop" design="Bold"/>
+          <Input type="Password"
+              placeholder="Ingrese su nueva contraseña" id="pass" submit="onSaveDialog">
+          </Input>
+         <Label text="Repetir Contraseña:" class="sapUiSmallMarginTop" design="Bold"/>
+          <Input type="Password"
+              placeholder="Confirme la contraseña" id="pafss" submit="onSaveDialog">
+          </Input>
+          <Label text="" class="sapUiSmallMarginTop" design="Bold"/>
+        </VBox>
+	</content>
+
+		<beginButton>
+			<Button
+				text="Aceptar"
+				type="Accept"
+				press="onSaveDialog"/>
+		</beginButton>
+		<endButton>
+			<Button
+				text="Cancelar"
+				type="Reject"
+				press="onCloseDialog"/>
+		</endButton>
+
+	</Dialog>
+</core:FragmentDefinition>

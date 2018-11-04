@@ -1,0 +1,70 @@
+{
+    "boatproducts_id":{
+        "value":""
+    },
+    "code": {
+        "value": "",
+        "state": "None",
+        "stateText": "",
+        "visible": true,
+        "editable": false,
+        "required": true,
+        "excepcion": "",
+        "ok": false
+    },
+    "name": {
+        "value": "",
+        "state": "None",
+        "stateText": "",
+        "visible": true,
+        "editable": false,
+        "required": true,
+        "excepcion": "",
+        "ok": false
+    },
+    "description": {
+        "value": "",
+        "state": "None",
+        "stateText": "",
+        "visible": true,
+        "editable": false,
+        "required": true,
+        "excepcion": "",
+        "ok": false
+    },
+    "cost": {
+        "value": "",
+        "state": "None",
+        "stateText": "",
+        "visible": true,
+        "editable": false,
+        "required": true,
+        "excepcion": "",
+        "ok": false
+    },
+    "unit_price": {
+        "value": "",
+        "state": "None",
+        "stateText": "",
+        "visible": true,
+        "editable": false,
+        "required": true,
+        "excepcion": "",
+        "ok": false
+    },
+    "type": {
+        "value": "",
+        "state": "None",
+        "stateText": "",
+        "visible": true,
+        "editable": false,
+        "required": false
+    },
+    "records": [],
+    "selectedRecordPath": "",
+    "create": false,
+  	"modify": true,
+  	"delete": true,
+  	"save": true,
+  	"cancel": true
+}

@@ -1,0 +1,108 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="technicalConfiguration.controller.billinformation">
+	<VBox class="sapUiSmallMargin" id="centerFormVBox">
+		
+		<sap.ui.layout.form:SimpleForm
+				xmlns:sap.ui.layout.form="sap.ui.layout.form"
+				title="{i18n>bill.data}"
+				editable="true"
+				layout="ResponsiveGridLayout"
+				id="centerForm"
+				class="editableForm">
+
+					 			 		  
+					<Table
+						xmlns:core="sap.ui.core"
+						xmlns:mvc="sap.ui.core.mvc"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						xmlns:sap.m.semantic="sap.m.semantic"
+						xmlns="sap.m"
+						noDataText="{i18n>noRecords}"
+						id="billTable"
+						items="{billinformation>/records/}"
+						mode="None">
+
+						<headerToolbar>
+							<OverflowToolbar id="otbSubheader">
+								<ToolbarSpacer/>
+						
+							
+								<Label text="Codigo de Factura"  align="left"/>		
+								<ObjectNumber
+									number="  {path:'billinformation>/Code'}"  align="left"/>
+
+
+								<Label text="Total Facturado"  align="left"/>
+								<ObjectNumber
+									number="  {path:'billinformation>/Total'}"  align="left"/>
+
+							</OverflowToolbar>
+						</headerToolbar>
+
+						<items>
+							<ColumnListItem counter="0" id="bill_list_item" >
+								<cells>
+									<Text text="{billinformation>codeproduct}" maxLines="0" id="bill_code_text"/>
+								</cells>
+								<cells>
+									<Text text="{billinformation>name}" maxLines="0" id="bill_name_text"/>
+								</cells>
+								<cells>
+									<Text text="{billinformation>description}" maxLines="0" id="bill_description_text"/>
+								</cells>
+								<cells>
+									<Text text="{billinformation>unit_price}" maxLines="0" id="bill_unit_price_text"/>
+								</cells>
+								<cells>
+									<Text text="{billinformation>quantity}" maxLines="0" id="bill_quantity_text"/>
+								</cells>
+								<cells>
+									<Text text="{billinformation>status}" maxLines="0" id="bill_status_text"/>
+								</cells>
+							
+							</ColumnListItem>
+						</items>
+						<columns>
+							<Column id="bill_code_column" vAlign="Middle" width="30%">
+								<header>
+									<Label text="{i18n>broilerProduct.code}" id="bill_table_code_label"/>
+								</header>
+							</Column>	
+
+							<Column id="bill_name_column" vAlign="Middle" width="30%">
+								<header>
+									<Label text="{i18n>broilerProduct.name}" id="bill_table_name_label"/>
+								</header>
+							</Column>	
+							
+							<Column id="bill_description_column" vAlign="Middle" width="30%">
+								<header>
+									<Label text="{i18n>broilerProduct.description}" id="bill_table_description_label"/>
+								</header>
+							</Column>	
+
+							<Column id="bill_unit_price_column" vAlign="Middle" width="30%">
+								<header>
+									<Label text="{i18n>broilerProduct.unit_price}" id="bill_table_unit_price_label"/>
+								</header>
+							</Column>
+								
+							<Column id="bill_quantity_column" vAlign="Middle" width="30%">			
+								<header>
+									<Label text="{i18n>broilerProduct.quantity}" id="bill_table_quantity_label"/>
+								</header>
+							</Column>
+
+							<Column id="bill_status_column" vAlign="Middle" width="30%">			
+								<header>
+									<Label text="{i18n>broilerProduct.status}" id="bill_table_status_label"/>
+								</header>
+							</Column>
+							
+						</columns>
+				
+					</Table>
+						
+					
+		</sap.ui.layout.form:SimpleForm>
+	</VBox>
+</mvc:View>

@@ -1,0 +1,283 @@
+	{
+		"_version": "1.1.0",
+		"sap.app": {
+			"_version": "1.1.0",
+			"id": "technicalConfiguration",
+			"type": "application",
+			"i18n": "i18n/i18n.properties",
+			"applicationVersion": {
+				"version": "1.0.0"
+			},
+			"title": "{{appTitle}}",
+			"description": "{{appDescription}}",
+			"sourceTemplate": {
+				"id": "ui5template.basicSAPUI5ApplicationProject",
+				"version": "1.32.0"
+			}
+		},
+
+		"sap.ui": {
+			"_version": "1.1.0",
+			"technology": "UI5",
+			"icons": {
+				"icon": "",
+				"favIcon": "",
+				"phone": "",
+				"phone@2": "",
+				"tablet": "",
+				"tablet@2": ""
+			},
+			"deviceTypes": {
+				"desktop": true,
+				"tablet": true,
+				"phone": true
+			},
+			"supportedThemes": [
+				"sap_hcb",
+				"sap_bluecrystal"
+			]
+		},
+
+		"sap.ui5": {
+			"_version": "1.1.0",
+			"rootView": {
+				"viewName": "technicalConfiguration.view.App",
+				"type": "XML"
+			},
+			"dependencies": {
+				"minUI5Version": "1.30.0",
+				"libs": {
+					"sap.ui.core": {},
+					"sap.m": {},
+					"sap.ui.layout": {}
+				}
+			},
+			"contentDensities": {
+				"compact": true,
+				"cozy": true
+			},
+			"models": {
+				"i18n": {
+					"type": "sap.ui.model.resource.ResourceModel",
+					"settings": {
+						"bundleName": "technicalConfiguration.i18n.i18n"
+					}
+				},
+				"util": {
+					"type": "sap.ui.model.json.JSONModel",
+					"uri": "model/util.json"
+				},
+				"mdboatproducts":{
+					"type": "sap.ui.model.json.JSONModel",
+					"uri": "model/mdboatproducts.json"
+				},
+				"mdclients":{
+					"type": "sap.ui.model.json.JSONModel",
+					"uri": "model/mdclients.json"
+				},
+				"mdbill":{
+					"type": "sap.ui.model.json.JSONModel",
+					"uri": "model/mdbill.json"
+				},
+				"billinformation":{
+					"type": "sap.ui.model.json.JSONModel",
+					"uri": "model/billinformation.json"
+				}
+				
+			},
+			"resources": {
+				"css": [{
+					"uri": "css/style.css"
+				}]
+			},
+			"routing": {
+				"config": {
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "technicalConfiguration.view",
+					"controlId": "appControl",
+					"controlAggregation": "pages",
+					"bypassed": {
+						"target": "notFoundTarget"
+					},
+					"async": true
+				},
+				"routes": [{
+					"pattern": "",
+					"name": "master",
+					"target": [
+						"masterTarget"
+					]
+				},
+				
+				{
+					"pattern": "entity/mdboatproducts",
+					"name": "mdboatproducts",
+					"target": [
+						"masterTarget",
+						"mdboatproductsTarget"
+					]
+				},
+				{
+					"pattern": "entity/mdboatproducts/create",
+					"name": "mdboatproducts_Create",
+					"target": [
+						"masterTarget",
+						"mdboatproducts_CreateTarget"
+					]
+				},
+				{
+					"pattern": "entity/mdboatproducts/record",
+					"name": "mdboatproducts_Record",
+					"target": [
+						"masterTarget",
+						"mdboatproducts_RecordTarget"
+					]
+				},
+
+				{
+					"pattern": "entity/mdclients",
+					"name": "mdclients",
+					"target": [
+						"masterTarget",
+						"mdclientsTarget"
+					]
+				},
+				{
+					"pattern": "entity/mdclients/create",
+					"name": "mdclients_Create",
+					"target": [
+						"masterTarget",
+						"mdclients_CreateTarget"
+					]
+				},
+				{
+					"pattern": "entity/mdclients/record",
+					"name": "mdclients_Record",
+					"target": [
+						"masterTarget",
+						"mdclients_RecordTarget"
+					]
+				},
+
+				{
+					"pattern": "entity/billinformation",
+					"name": "billinformation",
+					"target": [
+						"masterTarget",
+						"billinformationTarget"
+					]
+				},
+				{
+					"pattern": "entity/billinformation/record",
+					"name": "billinformation_Record",
+					"target": [
+						"masterTarget",
+						"billinformation_RecordTarget"
+					]
+				},
+
+
+				{
+					"pattern": "entity/bill",
+					"name": "bill",
+					"target": [
+						"masterTarget",
+						"billTarget"
+					]
+				},
+			{
+				"pattern": "notFound",
+				"name": "notFoundTarget",
+				"target": "notFoundTarget"
+			}],
+				"targets": {
+					"splitViewTarget": {
+						"viewName": "SplitView"
+					},
+					"masterTarget": {
+						"viewName": "Master",
+						"viewLevel": 1,
+						"parent": "splitViewTarget",
+						"controlId": "splitContainerControl",
+						"controlAggregation": "masterPages"
+					},
+
+					"mdboatproductsTarget": {
+						"viewName": "boatproducts.mdboatproducts",
+						"viewLevel": 2,
+						"parent": "splitViewTarget",
+						"controlId": "splitContainerControl",
+						"controlAggregation": "detailPages"
+					},
+					"mdboatproducts_CreateTarget": {
+						"viewName": "boatproducts.mdboatproducts_Create",
+						"viewLevel": 3,
+						"parent": "splitViewTarget",
+						"controlId": "splitContainerControl",
+						"controlAggregation": "detailPages"
+					},
+					"mdboatproducts_RecordTarget": {
+						"viewName": "boatproducts.mdboatproducts_Record",
+						"viewLevel": 4,
+						"parent": "splitViewTarget",
+						"controlId": "splitContainerControl",
+						"controlAggregation": "detailPages"
+					},
+
+
+					"mdclientsTarget": {
+						"viewName": "clients.mdclients",
+						"viewLevel": 2,
+						"parent": "splitViewTarget",
+						"controlId": "splitContainerControl",
+						"controlAggregation": "detailPages"
+					},
+					"mdclients_CreateTarget": {
+						"viewName": "clients.mdclients_Create",
+						"viewLevel": 3,
+						"parent": "splitViewTarget",
+						"controlId": "splitContainerControl",
+						"controlAggregation": "detailPages"
+					},
+					"mdclients_RecordTarget": {
+						"viewName": "clients.mdclients_Record",
+						"viewLevel": 4,
+						"parent": "splitViewTarget",
+						"controlId": "splitContainerControl",
+						"controlAggregation": "detailPages"
+					},
+
+
+					"billinformationTarget": {
+						"viewName": "billinformation.billinformation",
+						"viewLevel": 2,
+						"parent": "splitViewTarget",
+						"controlId": "splitContainerControl",
+						"controlAggregation": "detailPages"
+					},
+					
+					"billinformation_RecordTarget": {
+						"viewName": "billinformation.billinformation_Record",
+						"viewLevel": 4,
+						"parent": "splitViewTarget",
+						"controlId": "splitContainerControl",
+						"controlAggregation": "detailPages"
+					},
+
+					"billTarget": {
+						"viewName": "bill.bill",
+						"viewLevel": 2,
+						"parent": "splitViewTarget",
+						"controlId": "splitContainerControl",
+						"controlAggregation": "detailPages"
+					},
+
+					"notFoundTarget": {
+						"viewName": "NotFound",
+						"transition": "show"
+					}
+				}
+			}
+		}
+	}

@@ -1,0 +1,60 @@
+<mvc:View 	controllerName="Launchpad.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+			displayBlock="true" xmlns="sap.m">
+
+	<Page title="Aplicacion de Facturación">
+		<headerContent>
+			<Button icon="sap-icon://user-edit" tooltip="Cambiar contraseña" press="onChangePass"/>
+			<Button icon="sap-icon://employee-rejections" tooltip="Salir" press="logout"/>
+			
+		</headerContent>
+		<content>
+			<Bar id="welcome" >
+				<contentLeft>
+					<Label text="Bienvenido {data>/name}" design="Bold" textAlign="Center"/>
+				</contentLeft>
+			</Bar>
+			
+			<Bar id="conf" >
+				<contentMiddle>
+					<Label text="APLICACIONES" />
+				</contentMiddle>
+			</Bar>
+			<GenericTile 	id="tile0" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Facturacion"
+							 visible="false" scope="false" press="press"> 
+				<tileContent >
+					<TileContent disabled="true">
+						<content>
+							<ImageContent src="sap-icon://action-settings"/>
+						</content>
+					</TileContent>
+				</tileContent>
+			
+			</GenericTile>
+			
+			<GenericTile 	id="tile9" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Gestión de usuarios"
+							press="press" visible="false" disabled="true">
+				<tileContent>
+					<TileContent>
+						<content>
+							<ImageContent src="sap-icon://citizen-connect"/>
+						</content>
+					</TileContent>
+				</tileContent>
+			</GenericTile>
+
+<!-- 			
+			<GenericTile	id="tile12" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Carga masiva"
+							press="press" visible="false" disabled="true">
+				<tileContent>
+					<TileContent>
+						<content>
+							<ImageContent src="sap-icon://sys-first-page"/>
+						</content>
+					</TileContent>
+				</tileContent>
+			</GenericTile> -->
+		
+		</content>
+
+	</Page>
+</mvc:View>

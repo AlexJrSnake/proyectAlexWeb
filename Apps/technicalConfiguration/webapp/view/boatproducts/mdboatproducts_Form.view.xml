@@ -1,0 +1,75 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="technicalConfiguration.controller.mdboatproducts">
+	<VBox class="sapUiSmallMargin" id="centerFormVBox">
+		<sap.ui.layout.form:SimpleForm
+				xmlns:sap.ui.layout.form="sap.ui.layout.form"
+				title="{i18n>broilerProduct.data}"
+				editable="true"
+				layout="ResponsiveGridLayout"
+				id="centerForm"
+				minWidth="1024"
+				maxContainerCols="2"
+				labelSpanL="3"
+				labelSpanM="3"
+				emptySpanL="4"
+				emptySpanM="4"
+				columnsL="1"
+				columnsM="1"
+				class="editableForm">
+
+			<sap.ui.layout.form:content>
+				<Label id="boatproduct_code_label" visible="true" text="{i18n>broilerProduct.code}" required="{mdboatproducts>/code/required}"/>
+				<Input id="boatproduct_code_input"
+							 valueState="{mdboatproducts>/code/state}"
+		 					 valueStateText="{mdboatproducts>/code/stateText}"
+							 value="{ path: 'mdboatproducts>/code/value', type: 'sap.ui.model.type.String'}"
+							 editable="{mdboatproducts>/code/editable}"
+							 change="changeCode"/>
+
+				<Label id="boatproduct_name_label" visible="true" text="{i18n>broilerProduct.name}" required="{mdboatproducts>/name/required}"/>
+ 				<Input id="boatproduct_name_input"
+ 							 valueState="{mdboatproducts>/name/state}"
+ 		 					 valueStateText="{mdboatproducts>/name/stateText}"
+ 							 value="{ path: 'mdboatproducts>/name/value', type: 'sap.ui.model.type.String'}"
+ 							 editable="{mdboatproducts>/name/editable}"
+ 							 change="changeName"/>
+
+				<Label id="boatproduct_description_label" visible="true" text="{i18n>broilerProduct.description}"/>
+				<TextArea id="boatproduct_description_input"
+							 valueState="{mdboatproducts>/description/state}"
+		 					 valueStateText="{mdboatproducts>/description/stateText}"
+							 value="{ path: 'mdboatproducts>/description/value', type: 'sap.ui.model.type.String'}"
+							 editable="{mdboatproducts>/description/editable}"
+							/>	
+
+				<Label id="boatproduct_cost_label" visible="true" text="{i18n>broilerProduct.cost}" required="{mdboatproducts>/cost/required}"/>
+				<Input		 id="boatproduct_cost_input"	type="Number"
+							 valueState="{mdboatproducts>/cost/state}"
+		 					 valueStateText="{mdboatproducts>/cost/stateText}"
+							 value="{ path: 'mdboatproducts>/cost/value', type: 'sap.ui.model.type.String'}"
+							 editable="{mdboatproducts>/cost/editable}"
+							/>	
+
+
+				<Label id="boatproduct_unit_price_label" visible="true" text="{i18n>broilerProduct.unit_price}" />
+				<Input id="boatproduct_unit_price_input" 	type="Number"
+							 valueState="{mdboatproducts>/unit_price/state}"
+		 					 valueStateText="{mdboatproducts>/unit_price/stateText}"
+							 value="{ path: 'mdboatproducts>/unit_price/value', type: 'sap.ui.model.type.String'}"
+							 editable="{mdboatproducts>/unit_price/editable}"
+							/>				 			 		  
+
+				<!-- <Label id="stage_stageOrder_label" text="{i18n>breed.type}" required="{mdboatproducts>/type/required}"/>
+        <Select
+          id="breed_type_list"
+          forceSelection="false"
+          selectedKey="{mdboatproducts>/type/value}"
+          enabled="{mdboatproducts>/type/editable}"
+          autoAdjustWidth="true">
+                <core:Item key="Reproductora Liviana" text="Reproductora Liviana" />
+                <core:Item key="Reproductora Pesada" text="Reproductora Pesada" />
+        </Select> -->
+
+			</sap.ui.layout.form:content>
+		</sap.ui.layout.form:SimpleForm>
+	</VBox>
+</mvc:View>

@@ -1,0 +1,70 @@
+{
+    "client_id":{
+        "value":""
+    },
+    "cd": {
+        "value": "",
+        "state": "None",
+        "stateText": "",
+        "visible": true,
+        "editable": false,
+        "required": true,
+        "excepcion": "",
+        "ok": false
+    },
+    "name": {
+        "value": "",
+        "state": "None",
+        "stateText": "",
+        "visible": true,
+        "editable": false,
+        "required": true,
+        "excepcion": "",
+        "ok": false
+    },
+    "address": {
+        "value": "",
+        "state": "None",
+        "stateText": "",
+        "visible": true,
+        "editable": false,
+        "required": true,
+        "excepcion": "",
+        "ok": false
+    },
+    "phone": {
+        "value": "",
+        "state": "None",
+        "stateText": "",
+        "visible": true,
+        "editable": false,
+        "required": true,
+        "excepcion": "",
+        "ok": false
+    },
+    "email": {
+        "value": "",
+        "state": "None",
+        "stateText": "",
+        "visible": true,
+        "editable": false,
+        "required": true,
+        "excepcion": "",
+        "ok": false
+    },
+    "type": {
+        "value": "",
+        "state": "None",
+        "stateText": "",
+        "visible": true,
+        "editable": false,
+        "required": false
+    },
+    "records": [],
+    "selectedRecordPath": "",
+    "create": false,
+  	"modify": true,
+  	"delete": true,
+  	"save": true,
+  	"cancel": true
+}

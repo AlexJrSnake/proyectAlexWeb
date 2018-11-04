@@ -1,0 +1,42 @@
+<mvc:View controllerName="testtest.controller.Wharehouse"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true"
+  xmlns:u="sap.ui.unified"
+  xmlns="sap.m"
+  xmlns:t="sap.ui.table"
+  xmlns:l="sap.ui.layout"
+  xmlns:f="sap.ushell.ui.footerbar"
+  xmlns:core="sap.ui.core"
+  >
+  <App>
+    <pages>
+      <Page title="Aplicacion de Facturación - LogIn" showFooter="true">
+        <content>
+
+         <VBox alignItems="Center">
+             <Label text="Usuario:" class="sapUiSmallMarginTop" design="Bold"/>
+          <Input type="Text"
+              placeholder="Ingrese su usuario" id="usuario" submit="onPressButton">
+          </Input>
+          <Label text="Contraseña:" class="sapUiSmallMarginTop" design="Bold"/>
+          <Input type="Password"
+              placeholder="Ingrese su contraseña" id="pass" submit="onPressButton">
+          </Input>
+         
+         
+         </VBox>
+        </content>
+        <footer>
+          <Bar>
+            <contentRight>
+              <Button
+                text="Entrar"
+                press="onPressButton" />
+            </contentRight>
+          </Bar>
+     </footer>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>

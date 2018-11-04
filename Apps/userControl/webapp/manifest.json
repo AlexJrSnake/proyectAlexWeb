@@ -1,0 +1,120 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "testtest",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+
+		]
+	},
+
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "testtest.view.View1",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "testtest.i18n.i18n"
+				}
+			},
+			"data": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/data.json"
+			},
+			"util": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/util.json"
+      }
+		},
+		"routing": {
+			"config": {
+			  "routerClass": "sap.m.routing.Router",
+			  "viewType": "XML",
+			  "viewPath": "testest.view",
+			  "controlId": "appControl",
+			  "controlAggregation": "pages",
+			  "transition": "slide"
+			},
+			"routes": [
+			  {
+				"pattern": "",
+				"name": "main",
+				"target": "main"
+			  },
+			  {
+				"pattern":"wharehouse",
+				"name":"wharehouse",
+				"target":"wharehouse"
+			  },
+			  {
+				"pattern": "wharehouse/silo",
+				"name":"silos",
+				"target":"silos"
+			  }
+			],
+			"targets": {
+			  "main": {
+				"viewName": "View1",
+				"viewLevel": 1
+			  },
+			  "wharehouse":{
+				"viewName": "Wharehouse",
+				"viewLevel":2
+			  },
+			  "silos":{
+				"viewName":"Silo",
+				"viewLevel":3
+			  }
+			}
+		  },
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		}
+	}
+}

@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog id="confirmDeleteDlg" type="Standard" state="None" icon="sap-icon://delete" title="{i18n>confirmDeleteTitle}">
+		<content>
+			<FlexBox width="100%" id="confirmDeleteFlexBox" alignItems="Center" justifyContent="Center" fitContainer="true">
+				<items>
+					<Title id="confirmDeleteTitle" text="{util>/delete/message}"></Title>
+				</items>
+			</FlexBox>
+		</content>
+		<beginButton>
+			<Button id="confirmDeleteBtn" type="Reject" width="100px" text="{i18n>yes}" press="onDelete"/>
+		</beginButton>
+		<endButton>
+			<Button id="confirmDeleteCancelBtn" width="100px" text="{i18n>no}" press="onCancelDelete"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
